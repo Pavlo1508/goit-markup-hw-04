@@ -40,6 +40,10 @@ margin: 0 auto;
 padding: 0 15px;
 }
 
+.header {
+	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
 header .container {
 	display: flex;
 	align-items: flex-start;
@@ -80,7 +84,7 @@ header .container {
 	line-height: 1.5;
 	letter-spacing: 0.32px;
 	padding: 24px 0;
-	color: #2E2F42;
+	color: #404bbf;
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -97,6 +101,7 @@ header .container {
 	background-color: #404bbf;
 	border-radius: 2px;
 	margin-top: 20px;
+	bottom: -1px;
 }
 
 .contact-list {
@@ -124,9 +129,11 @@ header .container {
 	background-color: #2E2F42;
 	background-position: center center;
 	background-size: cover;
+	max-width: 1440px;
 	color: #fff;
 	height: 600px;
 	text-align: center;
+	margin: auto;
 	padding: 188px 0;
 }
 
@@ -179,6 +186,9 @@ header .container {
 }
 
 .icon-bcg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: relative;
 	width: 264px;
 	height: 112px;
@@ -186,13 +196,6 @@ header .container {
 	border: 1px solid #8E8F99;
 	border-radius: 4px;
 	margin-bottom: 8px;
-}
-
-.icon {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 .main-info-header {
@@ -256,7 +259,22 @@ header .container {
 	border-radius: 0px 0px 4px 4px;
 	text-align: center;
 	background-color: #fff;
-	box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.social-links-item-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: #4d5ae5;
+	border-radius: 50%;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links-item-link:hover, .social-links-item-link:focus {
+	background-color: #404bbf;
 }
 
 .social-links-bcg {
@@ -269,10 +287,7 @@ header .container {
 }
 
 .social-links-icon {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	fill: #f4f4fd;
 }
 
 .social-links {
@@ -301,7 +316,15 @@ header .container {
 }
 
 .portfolio-list-item:hover {
-	box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list-item p {
+	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover p {
+	transform: translateY(0%);
 }
 
 
@@ -310,31 +333,22 @@ header .container {
 	overflow: hidden;
 }
 
-.overlay {
+.overlay-text {
 	position: absolute;
 	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #4D5AE5;
-	transform: translateY(100%);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.overlay-text {
-	width: 296px;
-	margin: 40px auto 32px;
+	padding: 40px 32px;
 	color: #F4F4FD;
+	background-color: #4D5AE5;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.5;
-	letter-spacing: 0.32px;
-}
-
-.portfolio-list-item:hover .overlay {
-	transform: translateY(0);
+	letter-spacing: 0.02em;
+	transform: translateY(100%);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item-description {
@@ -367,10 +381,15 @@ header .container {
 
 .footer-container {
 	display: flex;
+	align-items: baseline;
 	width: 1158px;
 	margin: 0 auto;
 	padding: 0 15px;
 	gap: 120px;
+}
+
+.footer-info {
+	margin-right: 120px;
 }
 
 .footer-text {
@@ -388,11 +407,30 @@ header .container {
 	line-height: 1.5;
 	letter-spacing: 0.32px;
 	color: #fff;
+	margin-bottom: 16px;
 }
 
 .footer-social-links {
 	display: flex;
 	justify-content: center;
-	gap: 24px;
-	margin-top: 16px;
+	gap: 16px;
+}
+
+.footer-social-links-item {
+	width: 40px;
+	height: 40px;
+}
+
+.footer-social-links-item-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: #4d5ae5;
+	border-radius: 50%;
+}
+
+.footer-social-links-item-link:hover, .footer-social-links-item-link:focus {
+	background-color: #31d0aa;
 }
