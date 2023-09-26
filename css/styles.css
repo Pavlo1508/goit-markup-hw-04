@@ -48,7 +48,6 @@ header .container {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	gap: 332px;
 }
 
 .header-menu {
